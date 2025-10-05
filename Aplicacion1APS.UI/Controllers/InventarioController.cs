@@ -1,8 +1,11 @@
-﻿using MiPrimeraSolucion.abstraccion.ModelosParaUI.Clientes;
+﻿using MiPrimeraSolucion.abstraccion.LogicaDeNegocio.Inventario.ListaDeRepuestos;
+using MiPrimeraSolucion.abstraccion.ModelosParaUI.Clientes;
 using MiPrimeraSolucion.abstraccion.ModelosParaUI.Inventario;
+using MiPrimeraSolucion.LogicaNegocio.Inventario.ListaDeRepuestos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Mvc;
 
@@ -10,36 +13,18 @@ namespace Aplicacion1APS.UI.Controllers
 {
     public class InventarioController : Controller
     {
-        // GET: Invetario
+
+        private readonly IObtenerListaRepuestos_LogicaNegocio_ _ObtenerListaRepuestosLN;
+    public InventarioController()
+        {
+            _ObtenerListaRepuestosLN = new ObtenerListaRepuestos_LogicaNegocio_ ();
+        }
+
+
+        //Get inventario.
         public ActionResult ListadeRespuestos()
         {
-
-            List<InventarioDTO> lalistaDeInventario = new List<InventarioDTO>();
-            lalistaDeInventario.Add(new InventarioDTO
-            {
-                codigoDelRepuesto = "001",
-                nombreDelRepuesto = "Filtro de aire",
-                marcaDelRepuesto = "Bosch",
-                vehiculo = "Toyota",
-                modelo = "Corolla",
-                anio = 2020,
-                cantidad = 15,
-                estado = true
-            });
-
-            lalistaDeInventario.Add
-                (new InventarioDTO
-                {
-                    codigoDelRepuesto = "002",
-                    nombreDelRepuesto = "Bujías",
-                    marcaDelRepuesto = "NGK",
-                    vehiculo = "Honda",
-                    modelo = "Civic",
-                    anio = 2019,
-                    cantidad = 30,
-                    estado = true
-                });
-
+            List<InventarioDTO> lalistaDeInventario = _ObtenerListaRepuestosLN.Obtener();
 
             return View(lalistaDeInventario);
         }
@@ -58,7 +43,7 @@ namespace Aplicacion1APS.UI.Controllers
 
             return View(invDetalles);
 
-            
+
 
         }
 
@@ -85,7 +70,7 @@ namespace Aplicacion1APS.UI.Controllers
             inventario.vehiculo = "Toyota 2001";
             inventario.nombreDelRepuesto = "Compensadors para llantas";
             inventario.cantidad = 2;
-            
+
 
             return View(inventario);
         }

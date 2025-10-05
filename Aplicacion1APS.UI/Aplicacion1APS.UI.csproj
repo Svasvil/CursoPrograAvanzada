@@ -244,6 +244,10 @@
       <Project>{23c4ee73-be25-444b-b0b4-5a2ac32337ee}</Project>
       <Name>MiPrimeraSolucion.abstraccion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MiPrimeraSolucion.LogicaNegocio\MiPrimeraSolucion.LogicaNegocio.csproj">
+      <Project>{3C151A36-301F-44B9-846D-B8E943EA1D3B}</Project>
+      <Name>MiPrimeraSolucion.LogicaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

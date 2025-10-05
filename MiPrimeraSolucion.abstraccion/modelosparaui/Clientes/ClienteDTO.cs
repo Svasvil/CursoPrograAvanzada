@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MiPrimeraSolucion.abstraccion.ModelosParaUI.Clientes
 {
-    public class ClientesDTO{
+    public class ClientesDTO
+    {
 
         public string IDCliente { get; set; }
         public string Nombre { get; set; }
@@ -17,7 +18,7 @@ namespace MiPrimeraSolucion.abstraccion.ModelosParaUI.Clientes
         public DateTime fechaDeRegistro { get; set; }
         public DateTime fechaDeModificacion { get; set; }
         public bool estado { get; set; }
-        
+
 
 
     }

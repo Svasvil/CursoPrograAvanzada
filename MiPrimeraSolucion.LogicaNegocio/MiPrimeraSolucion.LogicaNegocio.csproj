@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}</ProjectGuid>
+    <ProjectGuid>{3C151A36-301F-44B9-846D-B8E943EA1D3B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MiPrimeraSolucion.abstraccion</RootNamespace>
-    <AssemblyName>MiPrimeraSolucion.abstraccion</AssemblyName>
+    <RootNamespace>MiPrimeraSolucion.LogicaNegocio</RootNamespace>
+    <AssemblyName>MiPrimeraSolucion.LogicaNegocio</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogicaDeNegocio\Inventario\ListaDeRepuestos\IObtenerListaRepuestos_LogicaNegocio_.cs" />
-    <Compile Include="ModelosParaUI\Clientes\ClienteDTO.cs" />
-    <Compile Include="ModelosParaUI\Inventario\InventarioDTO.cs" />
+    <Compile Include="Inventario\ListaDeRepuestos\ObtenerListaRepuestos%28LogicaNegocio%29.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cliente\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiPrimeraSolucion.abstraccion\MiPrimeraSolucion.abstraccion.csproj">
+      <Project>{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}</Project>
+      <Name>MiPrimeraSolucion.abstraccion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

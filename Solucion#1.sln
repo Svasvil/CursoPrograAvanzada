@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacion1APS.UI", "Aplica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiPrimeraSolucion.abstraccion", "MiPrimeraSolucion.abstraccion\MiPrimeraSolucion.abstraccion.csproj", "{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiPrimeraSolucion.LogicaNegocio", "MiPrimeraSolucion.LogicaNegocio\MiPrimeraSolucion.LogicaNegocio.csproj", "{3C151A36-301F-44B9-846D-B8E943EA1D3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C151A36-301F-44B9-846D-B8E943EA1D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C151A36-301F-44B9-846D-B8E943EA1D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C151A36-301F-44B9-846D-B8E943EA1D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C151A36-301F-44B9-846D-B8E943EA1D3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
