@@ -10,6 +10,10 @@ namespace MiPrimeraSolucion.abstraccion.ModelosParaUI.Inventario
 {
     public class InventarioDTO
     {
+
+        public int id { get; set; }
+
+
         [Display(Name ="Codigo Repuesto.")] //Este display es para mostrar un texto en vez de la variable como tal , si vemos la variable no tiene espacions minetras que este texto si                       
         [Required] // Esto es para que el campo sea obligatorio 
         [MinLength(4)] // Esto es para que el campo tenga un minimo de caracteres, en este caso de cuatro caracteres.
@@ -55,7 +59,7 @@ namespace MiPrimeraSolucion.abstraccion.ModelosParaUI.Inventario
         [Display(Name = "Fecha de la modificacion.")] //Este display es para mostrar un texto en vez de la variable como tal , si vemos la variable no tiene espacions minetras que este texto si                       
         [Required] // Esto es para que el campo sea obligatorio 
         [MinLength(4)] // Esto es para que el campo tenga un minimo de caracteres, en este caso de cuatro caracteres.
-        public DateTime fechaDeModificacion { get; set; }
+        public DateTime? fechaDeModificacion { get; set; }
 
         [Display(Name = "Estado")] //Este display es para mostrar un texto en vez de la variable como tal , si vemos la variable no tiene espacions minetras que este texto si                       
         [Required] // Esto es para que el campo sea obligatorio 

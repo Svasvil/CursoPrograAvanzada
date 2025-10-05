@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcces\Inventario\ListaDeRepuestos\IObtenerListaDeRepuestos_Db_.cs" />
     <Compile Include="LogicaDeNegocio\Inventario\ListaDeRepuestos\IObtenerListaRepuestos_LogicaNegocio_.cs" />
     <Compile Include="ModelosParaUI\Clientes\ClienteDTO.cs" />
     <Compile Include="ModelosParaUI\Inventario\InventarioDTO.cs" />

@@ -52,6 +52,10 @@
       <Project>{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}</Project>
       <Name>MiPrimeraSolucion.abstraccion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MiPrimeraSolucionAceesoDatos\MiPrimeraSolucionAceesoDatos.csproj">
+      <Project>{4051133A-8C5E-46C6-AA0C-ABA10208FCA5}</Project>
+      <Name>MiPrimeraSolucionAceesoDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
