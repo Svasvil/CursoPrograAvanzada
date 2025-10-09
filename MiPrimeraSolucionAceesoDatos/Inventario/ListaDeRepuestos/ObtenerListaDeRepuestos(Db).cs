@@ -18,7 +18,7 @@ namespace MiPrimeraSolucionAceesoDatos.Inventario.ListaDeRepuestos{
         }
         public List<InventarioDTO> Obtener()
         {
-            List<InventarioDTO> laListaDeInventario = (from inventario in contexto.Inventarios //Aqui le decimos que de la variable contexto , de la propiedad inventarios (la cual es el DbSet que creamos en el ObjetoContexto)
+            List<InventarioDTO> laListaDeInventario = (from inventario in contexto.Inventario //Aqui le decimos que de la variable contexto , de la propiedad inventarios (la cual es el DbSet que creamos en el ObjetoContexto)
                                                        select new InventarioDTO //Creamos un nuevo objeto de tipo InventarioDTO (el cual es el que vamos a retornal luego) ademas , esto es como un slect de db 
                                                        {
                                                            id = inventario.id, //Basicamente estamos diciendo que cada parte del InventarioDTO va a ser igual a la parte del inventario que estamos obteniendo de la base de datos., Lo igualamos por decirlo asi 

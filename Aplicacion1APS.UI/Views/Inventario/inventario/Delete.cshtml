@@ -1,0 +1,39 @@
+﻿@model MiPrimeraSolucion.abstraccion.ModelosParaUI.Inventario.InventarioDTO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Que producto quiere eliminar?</h3>
+<dt>
+    @Html.DisplayNameFor(model => model.codigoDelRepuesto)
+</dt>
+
+
+
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.Label("ID del producto a eliminar")
+        @Html.TextBox("id", null, new { @class = "form-control", placeholder = "Ingrese el ID del producto" })
+    </div>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <div>
+        @Html.ActionLink("regresar", "ListadeRespuestos")
+    </div>
+
+<div>
+    <h4>Inventario</h4>
+    <hr />
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div>
+            @Html.ActionLink("Back to List", "ListadeRespuestos")
+        </div>
+    }
+</div>

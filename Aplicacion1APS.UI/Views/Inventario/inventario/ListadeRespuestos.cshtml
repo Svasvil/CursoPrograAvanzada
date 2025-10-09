@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MiPrimeraSolucion.abstraccion.ModelosParaUI.Inventario.InventarioDTO>
+
+@{
+    ViewBag.Title = "ListadeRespuestos";
+}
+
+<h2>ListadeRespuestos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigoDelRepuesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreDelRepuesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marcaDelRepuesto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaDeRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaDeModificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigoDelRepuesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreDelRepuesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.marcaDelRepuesto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaDeRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaDeModificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id = 2 }) |
+            @Html.ActionLink("Details", "Details", new { id = 2 }) |
+            @Html.ActionLink("Delete ", "Delete", new { id=2 })|
+            @Html.ActionLink("anadir cosa", "Create", new { id = 2 })|
+        </td>
+    </tr>
+}
+
+</table>
