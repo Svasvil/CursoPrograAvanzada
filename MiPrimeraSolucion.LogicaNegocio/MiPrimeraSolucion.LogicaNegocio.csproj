@@ -42,15 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente\AgregarCliente\AgregarClienteLN.cs" />
+    <Compile Include="Cliente\ListaDeClientes\ListaClientes_LN.cs" />
     <Compile Include="General\GestionFechas\Fecha.cs" />
     <Compile Include="Inventario\AgregarRepuesto\AgregarRepuesto%28LogicaNegocio%29.cs" />
     <Compile Include="Inventario\EditarRepuestos\EditarRepuestos%28LogicaNegocio%29.cs" />
     <Compile Include="Inventario\ListaDeRepuestos\ObtenerListaRepuestos%28LogicaNegocio%29.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Cliente\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MiPrimeraSolucion.abstraccion\MiPrimeraSolucion.abstraccion.csproj">
       <Project>{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}</Project>

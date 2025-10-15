@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcces\Clientes\AgregarCliente\IAgregarClienteAD.cs" />
+    <Compile Include="DataAcces\Clientes\ListaDeClientes\IObtenerListaClientesAD.cs" />
     <Compile Include="DataAcces\Inventario\AgregarRepuesto\IAgregarRepuestoAD.cs" />
     <Compile Include="DataAcces\Inventario\ListaDeRepuestos\IObtenerListaDeRepuestos_Db_.cs" />
+    <Compile Include="LogicaDeNegocio\Cliente\AgregarCliente\IAgregarClienteLN.cs" />
+    <Compile Include="LogicaDeNegocio\Cliente\ListaDeClientes\IListaClientes_LN.cs" />
     <Compile Include="LogicaDeNegocio\General\GestionFechas\IFecha.cs" />
     <Compile Include="LogicaDeNegocio\Inventario\AgregarRepuesto\IAgregarRepuesto%28Logica%29.cs" />
     <Compile Include="LogicaDeNegocio\Inventario\ListaDeRepuestos\IObtenerListaRepuestos_LogicaNegocio_.cs" />

@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\AgregarCliente\AgregarCliente.cs" />
+    <Compile Include="Clientes\ObtenerListaClienteAD\ObtenerListaClientesAD.cs" />
+    <Compile Include="Entidades\ClientesAD.cs" />
     <Compile Include="Entidades\Inventario%28BaseDatos%29.cs" />
     <Compile Include="Inventario\AgregarRepuesto\AgregarRepuesto%28DB%29.cs" />
     <Compile Include="Inventario\EditarRepuestos\EditarRespuesto%28DB%29.cs" />
@@ -69,6 +72,10 @@
       <Project>{23C4EE73-BE25-444B-B0B4-5A2AC32337EE}</Project>
       <Name>MiPrimeraSolucion.abstraccion</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Clientes\EditarCliente\" />
+    <Folder Include="Clientes\EliminarCliente\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

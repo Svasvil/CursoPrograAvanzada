@@ -16,4 +16,6 @@ namespace MiPrimeraSolucionAceesoDatos
         }
 
         public DbSet<Inventario_BaseDatos_> Inventario { get; set; }
+        public DbSet<ClientesAD> Clientes { get; set; }
     }
+}

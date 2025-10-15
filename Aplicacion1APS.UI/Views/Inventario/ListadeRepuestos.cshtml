@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MiPrimeraSolucion.abstraccion.ModelosParaUI.Inventario.InventarioDTO>
+
+@{
+    ViewBag.Title = "Lista de Repuestos";
+}
+
+<h2>Lista de Repuestos</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo Repuesto", "Create", "Inventario", null, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.codigoDelRepuesto)</th>
+            <th>@Html.DisplayNameFor(model => model.nombreDelRepuesto)</th>
+            <th>@Html.DisplayNameFor(model => model.marcaDelRepuesto)</th>
+            <th>@Html.DisplayNameFor(model => model.vehiculo)</th>
+            <th>@Html.DisplayNameFor(model => model.modelo)</th>
+            <th>@Html.DisplayNameFor(model => model.anio)</th>
+            <th>@Html.DisplayNameFor(model => model.cantidad)</th>
+            <th>@Html.DisplayNameFor(model => model.fechaDeRegistro)</th>
+            <th>@Html.DisplayNameFor(model => model.fechaDeModificacion)</th>
+            <th>@Html.DisplayNameFor(model => model.estado)</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.codigoDelRepuesto)</td>
+                <td>@Html.DisplayFor(modelItem => item.nombreDelRepuesto)</td>
+                <td>@Html.DisplayFor(modelItem => item.marcaDelRepuesto)</td>
+                <td>@Html.DisplayFor(modelItem => item.vehiculo)</td>
+                <td>@Html.DisplayFor(modelItem => item.modelo)</td>
+                <td>@Html.DisplayFor(modelItem => item.anio)</td>
+                <td>@Html.DisplayFor(modelItem => item.cantidad)</td>
+                <td>@Html.DisplayFor(modelItem => item.fechaDeRegistro)</td>
+                <td>@Html.DisplayFor(modelItem => item.fechaDeModificacion)</td>
+                <td>@Html.DisplayFor(modelItem => item.estado)</td>
+                <td>
+                    @* CORREGIDO: usa el ID real del item, no hardcoded *@
+                    @Html.ActionLink("Editar", "Editar", new { id = item.codigoDelRepuesto }, new { @class = "btn btn-sm btn-primary" })
+                    @Html.ActionLink("Detalles", "Details", new { id = item.codigoDelRepuesto }, new { @class = "btn btn-sm btn-info" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.codigoDelRepuesto }, new { @class = "btn btn-sm btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

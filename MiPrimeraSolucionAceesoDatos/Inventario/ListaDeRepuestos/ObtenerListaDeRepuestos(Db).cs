@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MiPrimeraSolucionAceesoDatos.Inventario.ListaDeRepuestos{
-    public class ObtenerListaDeRepuestos_Db_ : IObtenerListaDeRepuestos_Db_
+    public class ObtenerListaDeRepuestos_Db_ : IobtenerListaClientes_DB
     {
         private ObjetoContexto contexto; //Creamos una variable de tipo ObjetoContexto , el cual es el que nos va a ayudar a comunicarnos con la base de datos.
 

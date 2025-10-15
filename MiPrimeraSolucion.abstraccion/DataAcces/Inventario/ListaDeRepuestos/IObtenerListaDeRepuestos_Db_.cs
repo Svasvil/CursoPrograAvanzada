@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MiPrimeraSolucion.abstraccion.DataAcces.Inventario.ListaDeRepuestos
 {
-    public  interface IObtenerListaDeRepuestos_Db_{
+    public  interface IobtenerListaClientes_DB{
         //Creamos una intefaz con un metodo vacio , el cual vamos a implementar en la clase ObtenerListaDeRepuestos_Db_ que esta en la carpeta de Acceso a datos.
         List<InventarioDTO> Obtener(); 
 

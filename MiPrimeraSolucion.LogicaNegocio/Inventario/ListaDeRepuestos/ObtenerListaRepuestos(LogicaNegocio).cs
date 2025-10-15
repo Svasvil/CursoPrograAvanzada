@@ -15,7 +15,7 @@ namespace MiPrimeraSolucion.LogicaNegocio.Inventario.ListaDeRepuestos
     public class ObtenerListaRepuestos_LogicaNegocio_ : IObtenerListaRepuestos_LogicaNegocio_
     {
         // Creamos una variable privada para acceder a la capa de datos, que nos permite obtener la lista de repuestos desde la base de datos.
-        private readonly IObtenerListaDeRepuestos_Db_ obtenerListaDeRepuestos_Db_;
+        private readonly IobtenerListaClientes_DB obtenerListaDeRepuestos_Db_;
 
         // Constructor de la clase, donde inicializamos la variable que accede a la base de datos.
         public ObtenerListaRepuestos_LogicaNegocio_()

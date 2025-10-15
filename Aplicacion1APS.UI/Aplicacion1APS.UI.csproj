@@ -200,7 +200,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Inventario\ListadeRespuestos.cshtml" />
+    <Content Include="Views\Inventario\ListadeRepuestos.cshtml" />
     <Content Include="Views\Clientes\ListaClientes.cshtml" />
     <Content Include="Views\Clientes\Create.cshtml" />
     <Content Include="Views\Clientes\CrearCliente.cshtml" />
@@ -220,6 +220,7 @@
     <Content Include="Views\Inventario\inventario\Details.cshtml" />
     <Content Include="Views\Inventario\inventario\Editar.cshtml" />
     <Content Include="Views\Inventario\inventario\ListadeRespuestos.cshtml" />
+    <Content Include="Views\Clientes\AgregarCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

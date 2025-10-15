@@ -14,6 +14,11 @@ namespace MiPrimeraSolucionAceesoDatos.Inventario.ObtenerRepuestoID
         private ObjetoContexto contexto; //Creamos una variable de tipo ObjetoContexto , el cual es el que nos va a ayudar a comunicarnos con la base de datos.
         public BuscarRepuestoID() { contexto = new ObjetoContexto(); }
 
+        public Task<int> Agregar(InventarioDTO elRepuestoParaGuardar)
+        {
+            throw new NotImplementedException();
+        }
+
         public InventarioDTO Obtener(int IdRepuesto)
         {
             InventarioDTO ElRepuestoEnBaseDatos = (from inventario in contexto.Inventario //Aqui le decimos que de la variable contexto , de la propiedad inventarios (la cual es el DbSet que creamos en el ObjetoContexto)
