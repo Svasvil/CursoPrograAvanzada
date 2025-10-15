@@ -42,11 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcces\Inventario\AgregarRepuesto\IAgregarRepuestoAD.cs" />
     <Compile Include="DataAcces\Inventario\ListaDeRepuestos\IObtenerListaDeRepuestos_Db_.cs" />
+    <Compile Include="LogicaDeNegocio\General\GestionFechas\IFecha.cs" />
+    <Compile Include="LogicaDeNegocio\Inventario\AgregarRepuesto\IAgregarRepuesto%28Logica%29.cs" />
     <Compile Include="LogicaDeNegocio\Inventario\ListaDeRepuestos\IObtenerListaRepuestos_LogicaNegocio_.cs" />
     <Compile Include="ModelosParaUI\Clientes\ClienteDTO.cs" />
     <Compile Include="ModelosParaUI\Inventario\InventarioDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,11 +1,15 @@
-﻿using MiPrimeraSolucion.abstraccion.LogicaDeNegocio.Inventario.ListaDeRepuestos;
+﻿using MiPrimeraSolucion.abstraccion.DataAcces.Inventario.AgregarRepuesto;
+using MiPrimeraSolucion.abstraccion.LogicaDeNegocio.Inventario.AgregarRepuesto;
+using MiPrimeraSolucion.abstraccion.LogicaDeNegocio.Inventario.ListaDeRepuestos;
 using MiPrimeraSolucion.abstraccion.ModelosParaUI.Clientes;
 using MiPrimeraSolucion.abstraccion.ModelosParaUI.Inventario;
+using MiPrimeraSolucion.LogicaNegocio.Inventario.AgregarRepuesto;
 using MiPrimeraSolucion.LogicaNegocio.Inventario.ListaDeRepuestos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,26 +17,28 @@ namespace Aplicacion1APS.UI.Controllers
 {
     public class InventarioController : Controller
     {
+        
+        private readonly IObtenerListaRepuestos_LogicaNegocio_ _obtenerListaRepuestosLN;
 
-        private readonly IObtenerListaRepuestos_LogicaNegocio_ _ObtenerListaRepuestosLN;
-    public InventarioController()
+        
+        private readonly IAgregarRepuesto_Logica_ _agregarRepuestoLogica;
+
+        public InventarioController()
         {
-            _ObtenerListaRepuestosLN = new ObtenerListaRepuestos_LogicaNegocio_ ();
+            _obtenerListaRepuestosLN = new ObtenerListaRepuestos_LogicaNegocio_();
+            _agregarRepuestoLogica = new AgregarRepuesto_LogicaNegocio_();
         }
 
-
-        //Get inventario.
-        public ActionResult ListadeRespuestos()
+        public ActionResult ListaRepuestos()
         {
-            List<InventarioDTO> lalistaDeInventario = _ObtenerListaRepuestosLN.Obtener();
+            List<InventarioDTO> laListaDeInventario = _obtenerListaRepuestosLN.Obtener();
 
-            return View(lalistaDeInventario);
+            return View("ListadeRespuestos", laListaDeInventario);
         }
 
         // GET: Invetario/Details/5
         public ActionResult Details(int id)
         {
-
             InventarioDTO invDetalles = new InventarioDTO();
             invDetalles.codigoDelRepuesto = "2";
             invDetalles.marcaDelRepuesto = "Toyota";
@@ -40,26 +46,32 @@ namespace Aplicacion1APS.UI.Controllers
             invDetalles.nombreDelRepuesto = "Compensadors para llantas";
             invDetalles.cantidad = 2;
 
-
             return View(invDetalles);
-
-
-
         }
 
         // GET: Invetario/Create
         public ActionResult Create()
         {
-            //basicamente nos muestra la view de create vacia para nosotros llenarla 
-            return View(new InventarioDTO());
+            return View();
         }
 
         // POST: Invetario/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public async Task<ActionResult> Create(InventarioDTO RepuestoGuardar)
         {
-            return RedirectToAction("lista Inventario");
+            try
+            {
+                
+                int cantidadDeFilasAfectada = await _agregarRepuestoLogica.Agregar(RepuestoGuardar);
+                return RedirectToAction("ListaRepuestos");
+
+            }
+            catch
+            {
+                return View(RepuestoGuardar);
+            }
         }
+
 
         // GET: Invetario/Edit/5
         public ActionResult Editar(int id)
@@ -82,7 +94,6 @@ namespace Aplicacion1APS.UI.Controllers
             try
             {
                 // TODO: Add update logic here
-
                 return RedirectToAction("Index");
             }
             catch
@@ -104,7 +115,6 @@ namespace Aplicacion1APS.UI.Controllers
             try
             {
                 // TODO: Add delete logic here
-
                 return RedirectToAction("Index");
             }
             catch

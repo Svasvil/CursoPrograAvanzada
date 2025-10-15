@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="General\GestionFechas\Fecha.cs" />
+    <Compile Include="Inventario\AgregarRepuesto\AgregarRepuesto%28LogicaNegocio%29.cs" />
+    <Compile Include="Inventario\EditarRepuestos\EditarRepuestos%28LogicaNegocio%29.cs" />
     <Compile Include="Inventario\ListaDeRepuestos\ObtenerListaRepuestos%28LogicaNegocio%29.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
