@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace MiPrimeraSolucionAceesoDatos.Clientes.AgregarCliente
 {
-    public class AgregarCliente : IAgregarClienteAD
+    public class AgregarClienteBaseDatos : IAgregarClienteAD
     {
         private ObjetoContexto _Contexto;
-        public AgregarCliente()
+        public AgregarClienteBaseDatos()
         {
             _Contexto = new ObjetoContexto();
         }

@@ -10,7 +10,7 @@ namespace MiPrimeraSolucionAceesoDatos
 {
     public class ObjetoContexto : DbContext
     {
-        public ObjetoContexto() : base("ObjetoContexto(BaseDatos)")
+        public ObjetoContexto() 
         {
             Database.SetInitializer<ObjetoContexto>(null);
         }

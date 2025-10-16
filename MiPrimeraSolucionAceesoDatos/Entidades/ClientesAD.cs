@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiPrimeraSolucionAceesoDatos.Entidades
 {
-    [Table("[Clientes]")]
+    [Table("Clientes")]
     public class ClientesAD
     {
-        [Key] 
+        [Key]
+       
         [Column("IDCliente")]
-        public int IDCliente { get; set; } 
+        public int IDCliente { get; set; }
 
         [Column("Nombre")]
         public string Nombre { get; set; }
@@ -25,7 +22,7 @@ namespace MiPrimeraSolucionAceesoDatos.Entidades
         public string SegundoApellido { get; set; }
 
         [Column("Telefono")]
-        public string Telefono { get; set; } 
+        public string Telefono { get; set; }
 
         [Column("Correo")]
         public string Correo { get; set; }

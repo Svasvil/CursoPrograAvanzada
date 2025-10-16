@@ -1,10 +1,16 @@
-﻿using MiPrimeraSolucion.abstraccion.LogicaDeNegocio.Cliente.ListaDeClientes;
+﻿using Microsoft.VisualBasic;
+using MiPrimeraSolucion.abstraccion.LogicaDeNegocio.Cliente.AgregarCliente;
+using MiPrimeraSolucion.abstraccion.LogicaDeNegocio.Cliente.ListaDeClientes;
+using MiPrimeraSolucion.abstraccion.LogicaDeNegocio.Inventario.AgregarRepuesto;
 using MiPrimeraSolucion.abstraccion.ModelosParaUI.Clientes;
 using MiPrimeraSolucion.abstraccion.ModelosParaUI.Inventario;
+using MiPrimeraSolucion.LogicaNegocio.Cliente.AgregarCliente;
 using MiPrimeraSolucion.LogicaNegocio.Cliente.ListaDeClientes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,26 +19,21 @@ namespace Aplicacion1APS.UI.Controllers
     public class ClientesController : Controller
     {
         private readonly IListaClientes_LN _ListaClientes_LN;
+        private readonly IAgregarClienteLN _agregarClienteLogica;
+        
 
-        // *******************************************************************
-        // 1. CONSTRUCTOR SIN PARÁMETROS (AGREGADO PARA RESOLVER EL ERROR)
-        // Llama al constructor que tiene la dependencia, pasando la implementación concreta.
-        // Esto permite que el activador de MVC cree la instancia del controlador.
-        // *******************************************************************
+
         public ClientesController() : this(new ListaClientes_LN())
         {
-            // Este constructor llama al que toma argumentos, asegurando que _ListaClientes_LN se inicialice.
+           
         }
 
-        // *******************************************************************
-        // 2. CONSTRUCTOR CON DEPENDENCIAS (Mantenido para Inyección de Dependencias)
-        // Este constructor ahora recibe el objeto y lo asigna.
-        // *******************************************************************
+
         public ClientesController(IListaClientes_LN listaClientes_LN)
         {
-            // Nota: Aquí se usa 'listaClientes_LN' que es el argumento, no 'new ListaClientes_LN()'
-            // La inicialización con 'new' se maneja ahora en el constructor sin parámetros (arriba).
-            _ListaClientes_LN = listaClientes_LN;
+            
+            _ListaClientes_LN = new ListaClientes_LN();
+            _agregarClienteLogica = new AgregarClienteLN();
         }
 
         // GET: Clientes
@@ -62,19 +63,35 @@ namespace Aplicacion1APS.UI.Controllers
         public ActionResult Create()
         {
             //basicamente nos muestra la view de create vacia para nosotros llenarla 
-            return View(new ClientesDTO());
+            return View();
         }
+
 
 
         [HttpPost]
-        public ActionResult Create(ClientesDTO nuevoCliente)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(ClientesDTO NuevoCliente)
         {
+            if (!ModelState.IsValid)
+            {
+                foreach (var key in ModelState.Keys)
+                {
+                    var state = ModelState[key];
+                    foreach (var error in state.Errors)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Validation error for {key}: {error.ErrorMessage}");
+                    }
+                }
 
-            //nos lleva a la lista
+                return View(NuevoCliente);
+            }
+
+            int cantidadDeFilasAfectada = await _agregarClienteLogica.Agregar(NuevoCliente);
             return RedirectToAction("ListaClientes");
 
-
         }
+
+
 
 
         // GET: Clientes/Edit/5

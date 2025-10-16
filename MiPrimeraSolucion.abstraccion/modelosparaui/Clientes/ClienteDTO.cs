@@ -31,7 +31,6 @@ namespace MiPrimeraSolucion.abstraccion.ModelosParaUI.Clientes
 
         public bool estado { get; set; }
 
-        public string IDClienteString => IDCliente.ToString();
-        public string EstadoString => estado.ToString();
+       
     }
 }
